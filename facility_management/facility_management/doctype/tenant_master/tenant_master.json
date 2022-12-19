@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2020-02-17 20:49:10.137856",
@@ -10,23 +11,31 @@
   "first_name",
   "last_name",
   "tenant_name",
+  "tenant_type",
+  "nationality",
   "column_break_4",
   "customer",
-  "tenant_type",
   "gender",
   "dob",
+  "nin_no",
+  "state_of_origin",
   "contact_details_section",
-  "cr_no",
-  "cpr",
-  "cpr_expiry_date",
+  "mobile_no",
+  "whatsapp_no",
+  "email_address",
+  "column_break_15",
+  "drivers_license",
+  "drivers_license_expiry_date",
+  "facebook_account_name",
+  "column_break_18",
   "passport_no",
   "passport_expiry_date",
-  "column_break_13",
+  "twitter_account_handle",
+  "emergency_contact_section_section",
   "emergency_contact_name",
   "relationship",
-  "mobile_no",
-  "mobile_no_2",
-  "office_no",
+  "column_break_24",
+  "phone_no",
   "email",
   "employer_details_section",
   "employer_name",
@@ -38,7 +47,19 @@
   "block_no",
   "area",
   "city",
-  "country"
+  "country",
+  "guarantor_details_section",
+  "name_of_guarantor",
+  "phone_no_of_guarantor",
+  "guarantor_company",
+  "means_of_id",
+  "id_no",
+  "column_break_40",
+  "occupation_of_guarantor",
+  "email_of_guarantor",
+  "guarantor_position",
+  "relationship_with_tenant",
+  "address_of_guarantor"
  ],
  "fields": [
   {
@@ -90,10 +111,7 @@
    "label": "Date of Birth"
   },
   {
-   "fieldname": "column_break_13",
-   "fieldtype": "Column Break"
-  },
-  {
+   "collapsible": 1,
    "fieldname": "employer_details_section",
    "fieldtype": "Section Break",
    "label": "Employer Details"
@@ -149,21 +167,10 @@
    "options": "Country"
   },
   {
+   "collapsible": 1,
    "fieldname": "contact_details_section",
    "fieldtype": "Section Break",
    "label": "Contact Details"
-  },
-  {
-   "depends_on": "eval:doc.tenant_type==='Individual'",
-   "fieldname": "cpr",
-   "fieldtype": "Data",
-   "label": "CPR"
-  },
-  {
-   "depends_on": "eval:doc.tenant_type==='Individual'",
-   "fieldname": "cpr_expiry_date",
-   "fieldtype": "Date",
-   "label": "CPR Expiry Date"
   },
   {
    "fieldname": "passport_no",
@@ -191,34 +198,150 @@
    "label": "Mobile Number"
   },
   {
-   "fieldname": "mobile_no_2",
-   "fieldtype": "Data",
-   "label": "Mobile Number 2"
-  },
-  {
-   "fieldname": "office_no",
-   "fieldtype": "Data",
-   "label": "Office Number"
-  },
-  {
    "fieldname": "email",
    "fieldtype": "Data",
    "label": "Email Address"
-  },
-  {
-   "depends_on": "eval:doc.tenant_type == \"Company\"",
-   "fieldname": "cr_no",
-   "fieldtype": "Data",
-   "label": "CR No"
   },
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
    "options": "TEN-"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "guarantor_details_section",
+   "fieldtype": "Section Break",
+   "label": "Guarantor Details"
+  },
+  {
+   "fieldname": "name_of_guarantor",
+   "fieldtype": "Data",
+   "label": "Name of Guarantor"
+  },
+  {
+   "fieldname": "occupation_of_guarantor",
+   "fieldtype": "Data",
+   "label": "Occupation of Guarantor"
+  },
+  {
+   "fieldname": "phone_no_of_guarantor",
+   "fieldtype": "Data",
+   "label": "Phone No of Guarantor"
+  },
+  {
+   "fieldname": "email_of_guarantor",
+   "fieldtype": "Data",
+   "label": "Email of Guarantor"
+  },
+  {
+   "fieldname": "address_of_guarantor",
+   "fieldtype": "Small Text",
+   "label": "Address of Guarantor"
+  },
+  {
+   "fieldname": "means_of_id",
+   "fieldtype": "Select",
+   "label": "Means of ID",
+   "options": "\nNIN Slip\nNational ID Card\nDrivers License\nPermanent Voters Card\nInternational Passport\nEmployer ID"
+  },
+  {
+   "fieldname": "column_break_40",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "relationship_with_tenant",
+   "fieldtype": "Data",
+   "label": "Relationship with Tenant"
+  },
+  {
+   "fieldname": "id_no",
+   "fieldtype": "Data",
+   "label": "ID No"
+  },
+  {
+   "fieldname": "nin_no",
+   "fieldtype": "Data",
+   "label": "NiN No"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "emergency_contact_section_section",
+   "fieldtype": "Section Break",
+   "label": "Emergency Contact Section"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone_no",
+   "fieldtype": "Data",
+   "label": "Phone No"
+  },
+  {
+   "fieldname": "drivers_license",
+   "fieldtype": "Data",
+   "label": "Drivers License"
+  },
+  {
+   "depends_on": "eval:doc.tenant_type==='Individual'",
+   "fieldname": "drivers_license_expiry_date",
+   "fieldtype": "Date",
+   "label": "Drivers License Expiry Date"
+  },
+  {
+   "fieldname": "whatsapp_no",
+   "fieldtype": "Data",
+   "label": "WhatsApp Number"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "facebook_account_name",
+   "fieldtype": "Data",
+   "label": "Facebook Account Name"
+  },
+  {
+   "fieldname": "twitter_account_handle",
+   "fieldtype": "Data",
+   "label": "Twitter Account Handle"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
+  },
+  {
+   "fieldname": "state_of_origin",
+   "fieldtype": "Data",
+   "label": "State of Origin"
+  },
+  {
+   "fieldname": "guarantor_company",
+   "fieldtype": "Data",
+   "label": "Guarantor Place of Work"
+  },
+  {
+   "fieldname": "guarantor_position",
+   "fieldtype": "Data",
+   "label": "Guarantor Position"
   }
  ],
- "modified": "2020-12-14 14:46:06.578162",
+ "links": [],
+ "modified": "2022-09-02 18:21:03.581081",
  "modified_by": "Administrator",
  "module": "Facility Management",
  "name": "Tenant Master",
@@ -237,7 +360,7 @@
    "write": 1
   }
  ],
- "search_fields": "tenant_name,mobile_no,mobile_no_2,email,cpr",
+ "search_fields": "tenant_name,mobile_no,email",
  "sort_field": "modified",
  "sort_order": "DESC",
  "title_field": "tenant_name",

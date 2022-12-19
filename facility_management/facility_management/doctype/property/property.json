@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "allow_rename": 1,
  "autoname": "format:{property_group}-{property_no}",
  "creation": "2020-02-17 20:23:15.315787",
@@ -15,11 +16,6 @@
   "property_type",
   "property_status",
   "landlord",
-  "sb_rental",
-  "rental_status",
-  "rental_frequency",
-  "cb_rental",
-  "rental_rate",
   "section_break_9",
   "furnished",
   "property_size",
@@ -36,6 +32,13 @@
   "pets_allowed",
   "other_facilities_section",
   "property_item_facilities",
+  "sb_rental",
+  "rental_status",
+  "rental_frequency",
+  "cb_rental",
+  "rental_rate",
+  "service_charge_details_section",
+  "service_charge",
   "insurance_sb",
   "insured",
   "insurance_company",
@@ -87,6 +90,7 @@
    "options": "Rental\nSale"
   },
   {
+   "collapsible": 1,
    "depends_on": "eval:doc.property_status == 'Rental'",
    "fieldname": "sb_rental",
    "fieldtype": "Section Break",
@@ -116,8 +120,10 @@
    "label": "Rental Rate"
   },
   {
+   "collapsible": 1,
    "fieldname": "section_break_9",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Property Details"
   },
   {
    "fieldname": "furnished",
@@ -151,8 +157,10 @@
    "label": "Bathroom"
   },
   {
+   "collapsible": 1,
    "fieldname": "section_break_8",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Meter Details"
   },
   {
    "fieldname": "municipality_no",
@@ -238,9 +246,22 @@
    "fieldtype": "Link",
    "label": "Landlord",
    "options": "Landlord"
+  },
+  {
+   "fieldname": "service_charge",
+   "fieldtype": "Table",
+   "label": "Service Charges",
+   "options": "Service Charge"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "service_charge_details_section",
+   "fieldtype": "Section Break",
+   "label": "Service Charge Detail"
   }
  ],
- "modified": "2020-12-16 17:40:44.145570",
+ "links": [],
+ "modified": "2022-09-02 17:44:20.469560",
  "modified_by": "Administrator",
  "module": "Facility Management",
  "name": "Property",

@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-09-02 17:31:22.128827",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service_charge_type",
+  "service_charge_rate",
+  "column_break_3",
+  "service_charge_frequency"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_charge_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Service Charge Type",
+   "options": "\nSecurity\nWater Pumping\nWaste Disposal\nCommon Area Cleaning",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service_charge_rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Service Charge Rate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service_charge_frequency",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Service Charge Frequency",
+   "options": "\nMonthly\nQuarterly\nBi-Annually\nAnnually",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-09-02 17:40:49.948366",
+ "modified_by": "Administrator",
+ "module": "Facility Management",
+ "name": "Service Charge",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
